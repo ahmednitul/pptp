@@ -12,12 +12,9 @@ echo "$DATE : Loss Result : $PLOSS"
  
 if [ "100" -eq "$PLOSS" ];
 then
-    echo "$DATE : Creating primary connection to : $HOST"
+    echo "$DATE : Creating connection to : $HOST"
     pptpsetup --create pptp --server $HOST --username $PPTPUSER --password $PPTPPASS --encrypt --start
-    echo "$DATE : Connected to the primary pptp server : $HOST"
-    echo "$DATE : Creating backup connection to : $HOST"
-    pptpsetup --create pptp --server $HOST --username $PPTPUSER --password $PPTPPASS --encrypt --start
-    echo "$DATE : Connected to the backup pptp server : $HOST"
+    echo "$DATE : Connected to the PPTP VPN Server : $HOST"
 else
     echo "$DATE : Already running : $HOST"
 fi
